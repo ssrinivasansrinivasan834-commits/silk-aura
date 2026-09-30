@@ -3,11 +3,21 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="SilkAura - Premium Silk and Textile Collection">
 
     <title>SilkAura | Premium Textiles</title>
 
     <style>
+
+        /* =========================
+           BASIC RESET
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
@@ -15,12 +25,24 @@
             font-family: Arial, sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background: #fffaf5;
             color: #333;
+            line-height: 1.6;
         }
 
-        /* TOP BAR */
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           TOP BAR
+        ========================= */
 
         .top-bar {
             background: #5b0b0b;
@@ -30,7 +52,10 @@
             font-size: 14px;
         }
 
-        /* NAVBAR */
+
+        /* =========================
+           NAVBAR
+        ========================= */
 
         nav {
             background: white;
@@ -38,7 +63,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
             position: sticky;
             top: 0;
             z-index: 100;
@@ -61,34 +87,630 @@
         }
 
         nav a {
-            text-decoration: none;
             color: #333;
             font-weight: bold;
+            transition: 0.3s;
         }
 
         nav a:hover {
             color: #9b1515;
         }
 
-        /* HERO */
+
+        /* =========================
+           HERO SECTION
+        ========================= */
 
         .hero {
             min-height: 520px;
+
             display: flex;
             align-items: center;
+
             padding: 60px 8%;
 
             background:
                 linear-gradient(
-                    rgba(70,5,5,0.65),
-                    rgba(70,5,5,0.65)
+                    rgba(70, 5, 5, 0.65),
+                    rgba(70, 5, 5, 0.65)
                 ),
                 url("https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1600&q=80");
 
             background-size: cover;
             background-position: center;
+
             color: white;
         }
 
         .hero-content {
-            max-width: 650
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #e2b94b;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+
+            background: #c79a36;
+            color: white;
+
+            padding: 13px 25px;
+
+            border-radius: 5px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: #a87d22;
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           SECTION TITLE
+        ========================= */
+
+        .section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            color: #7b1113;
+            font-size: 34px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #777;
+        }
+
+
+        /* =========================
+           PRODUCTS
+        ========================= */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            color: #7b1113;
+            margin-bottom: 8px;
+        }
+
+        .card-content p {
+            color: #666;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            color: #c79a36;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: #f5e9dc;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 40px;
+
+            align-items: center;
+        }
+
+        .about img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .about-content h2 {
+            color: #7b1113;
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .about-content p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================
+           FEATURES
+        ========================= */
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 10px;
+
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .feature h3 {
+            color: #7b1113;
+            margin-bottom: 8px;
+        }
+
+        .feature p {
+            color: #666;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            text-align: center;
+            background: #7b1113;
+            color: white;
+        }
+
+        .contact h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .contact p {
+            margin-bottom: 20px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+
+            background: #c79a36;
+            color: white;
+
+            padding: 13px 25px;
+
+            border-radius: 5px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #3d0707;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer span {
+            color: #e2b94b;
+        }
+
+
+        /* =========================
+           MOBILE RESPONSIVE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 500px;
+                padding: 40px 6%;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 50px 6%;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- TOP BAR -->
+
+    <div class="top-bar">
+        ✨ Premium Silk Collection | Free Delivery on Selected Orders ✨
+    </div>
+
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="logo">
+            Silk<span>Aura</span>
+        </div>
+
+        <ul>
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#collection">Collection</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Elegance Woven
+                <span>Beautifully</span>
+            </h1>
+
+            <p>
+                Discover premium silk sarees and timeless
+                textiles crafted with tradition, quality and elegance.
+            </p>
+
+            <a href="#collection" class="hero-btn">
+                Explore Collection
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- COLLECTION -->
+
+    <section class="section" id="collection">
+
+        <div class="section-title">
+
+            <h2>Our Collection</h2>
+
+            <p>
+                Discover our elegant collection of premium textiles.
+            </p>
+
+        </div>
+
+
+        <div class="products">
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80"
+                    alt="Premium Silk Saree">
+
+                <div class="card-content">
+
+                    <h3>Royal Silk Saree</h3>
+
+                    <p>
+                        Elegant silk fabric designed for special occasions.
+                    </p>
+
+                    <div class="price">
+                        ₹4,999
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=800&q=80"
+                    alt="Traditional Textile">
+
+                <div class="card-content">
+
+                    <h3>Classic Collection</h3>
+
+                    <p>
+                        Traditional style with a modern touch.
+                    </p>
+
+                    <div class="price">
+                        ₹3,999
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1610189012906-4c8b8c1b0c1a?auto=format&fit=crop&w=800&q=80"
+                    alt="Luxury Textile">
+
+                <div class="card-content">
+
+                    <h3>Luxury Weave</h3>
+
+                    <p>
+                        Premium craftsmanship for a sophisticated look.
+                    </p>
+
+                    <div class="price">
+                        ₹5,999
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="section about" id="about">
+
+        <div>
+
+            <img
+                src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=1000&q=80"
+                alt="Silk Textile">
+
+        </div>
+
+
+        <div class="about-content">
+
+            <h2>About SilkAura</h2>
+
+            <p>
+                SilkAura brings together traditional textile
+                craftsmanship and modern elegance.
+            </p>
+
+            <p>
+                Every piece is carefully selected to offer
+                comfort, quality and timeless beauty.
+            </p>
+
+            <p>
+                Our goal is simple — to make every occasion
+                feel special.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <h2>Why Choose SilkAura?</h2>
+
+            <p>
+                Quality and elegance in every thread.
+            </p>
+
+        </div>
+
+
+        <div class="features">
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🧵
+                </div>
+
+                <h3>Premium Quality</h3>
+
+                <p>
+                    Carefully selected fabrics with
+                    excellent craftsmanship.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    ✨
+                </div>
+
+                <h3>Elegant Designs</h3>
+
+                <p>
+                    Beautiful designs inspired by
+                    timeless traditions.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🚚
+                </div>
+
+                <h3>Easy Delivery</h3>
+
+                <p>
+                    Convenient delivery for your
+                    favourite textile collection.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="section contact" id="contact">
+
+        <h2>Ready to Explore?</h2>
+
+        <p>
+            Discover the elegance of SilkAura today.
+        </p>
+
+        <a href="mailto:contact@silkaura.com"
+           class="contact-btn">
+            Contact Us
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026
+            <span>SilkAura</span>.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
